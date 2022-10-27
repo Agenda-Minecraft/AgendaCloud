@@ -32,7 +32,11 @@ class BungeeMenu {
             var itemStack: ItemStack
             when (it.gameStatus) {
                 GameStatus.WAITING -> {
+
                     itemStack = ItemStack(Material.GREEN_WOOL)
+
+                    // set name
+
                 }
 
                 GameStatus.LOADING -> {
@@ -48,11 +52,11 @@ class BungeeMenu {
                 }
 
                 GameStatus.ENDING -> {
-                    itemStack = ItemStack(Material.RED_WOOL)
+                    itemStack = ItemStack(Material.ORANGE_WOOL)
                 }
 
                 GameStatus.EXITED -> {
-                    itemStack = ItemStack(Material.RED_WOOL)
+                    itemStack = ItemStack(Material.GRAY_WOOL)
                 }
             }
             val itemMeta: ItemMeta = itemStack.itemMeta!!
@@ -68,6 +72,7 @@ class BungeeMenu {
                 "§aVersion: ${it.version}",
                 "§aMeta: ${it.meta}"
             )
+            itemMeta.setDisplayName("${it.gameStatus}")
             val serverConnectionName = it.address.replace(".", "-") + "-" + it.port
             itemStack.itemMeta = itemMeta
             itemStack = itemStack.setMEtcdCondition(it.gameStatus, serverConnectionName)
@@ -77,6 +82,7 @@ class BungeeMenu {
         for (i in 1..Config.paddingTo - result.size) {
             var itemStack = ItemStack(Material.GRAY_WOOL)
             itemStack = itemStack.setMEtcdCondition(GameStatus.EXITED)
+
             result.add(itemStack)
         }
 
