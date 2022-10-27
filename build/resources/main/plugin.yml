@@ -1,0 +1,12 @@
+name: MEtcd
+version: 0.0.1
+main: cat.kiwi.minecraft.metcd.MEtcdPlugin
+load: STARTUP
+authors: [ moeKiwiSAMA ]
+description: Etcd register
+api-version: 1.19
+commands:
+    metcd:
+        description: Etcd register
+        usage: /etcd query>
+        aliases: [ etcd, metcd ]
