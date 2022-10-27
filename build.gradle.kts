@@ -55,3 +55,15 @@ tasks {
 artifacts {
     archives(tasks.named("shadowJar"))
 }
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = "cat.kiwi"
+            artifactId = "MEtcd"
+            version = "1.0.1-SNAPSHOT"
+
+            from(components["java"])
+        }
+    }
+}
