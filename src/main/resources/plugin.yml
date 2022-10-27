@@ -1,5 +1,5 @@
 name: MEtcd
-version: 0.0.1
+version: 1.0.1-SNAPSHOT
 main: cat.kiwi.minecraft.metcd.MEtcdPlugin
 load: STARTUP
 authors: [ moeKiwiSAMA ]

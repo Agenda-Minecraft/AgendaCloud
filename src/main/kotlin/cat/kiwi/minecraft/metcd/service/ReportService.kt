@@ -1,6 +1,7 @@
 package cat.kiwi.minecraft.metcd.service
 
 import cat.kiwi.minecraft.metcd.MEtcdPlugin
+import cat.kiwi.minecraft.metcd.config.Config
 import cat.kiwi.minecraft.metcd.model.ServerStatus
 import com.google.gson.Gson
 import io.etcd.jetcd.ByteSequence
@@ -28,7 +29,7 @@ class ReportService {
                     val meta = Bukkit.getMotd()
                     MEtcdPlugin.serverStatus = ServerStatus(
                         MEtcdPlugin.uuid,
-                        MEtcdPlugin.gameType,
+                        Config.gameType,
                         currentOnline,
                         players,
                         total,
@@ -43,7 +44,7 @@ class ReportService {
                     try {
                         MEtcdPlugin.etcdClient.kvClient.put(
                             ByteSequence.from(
-                                "/agenda/service/${MEtcdPlugin.gameType}/${MEtcdPlugin.uuid}",
+                                "/agenda/service/${Config.gameType}/${MEtcdPlugin.uuid}",
                                 Charsets.UTF_8
                             ),
                             payload,

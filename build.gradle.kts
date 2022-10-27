@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "cat.kiwi.minecraft"
-version = "1.0-SNAPSHOT"
+version = "1.0.1-SNAPSHOT"
 
 repositories {
     mavenCentral()
@@ -50,4 +50,7 @@ tasks {
             exclude(dependency("org.spigotmc:spigot-api:1.19.2-R0.1-SNAPSHOT"))
         }
     }
+}
+artifacts {
+    archives(tasks.named("shadowJar"))
 }

@@ -21,7 +21,6 @@ class MEtcdPlugin : JavaPlugin() {
         lateinit var uuid: String
         lateinit var serverStatus: ServerStatus
         lateinit var grant: LeaseGrantResponse
-        var gameType = "unknown"
         var gameStatus: GameStatus = GameStatus.WAITING
             set(value) {
                 ReportService.reportStatus()

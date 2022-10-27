@@ -11,6 +11,7 @@ object Config {
     var paddingTo = 10
     lateinit var title: String
     lateinit var switchServerCommand: String
+    lateinit var gameType: String
 
     fun readConfig() {
         val instance = MEtcdPlugin.instance
@@ -32,6 +33,7 @@ object Config {
             paddingTo = instance.config.getInt("menu.paddingTo")
             title = instance.config.getString("menu.title")?: "MEtcd"
             switchServerCommand = instance.config.getString("menu.switchServerCommand")?: "/atp %server%"
+            gameType = instance.config.getString("gameType")?: "unknown"
 
         } catch (e: Exception) {
             e.printStackTrace()

@@ -6,7 +6,4 @@ interface MEtcd {
     fun modifyGateStatus(gameStatus: GameStatus) {
         MEtcdPlugin.gameStatus = gameStatus
     }
-    fun setGameType(gameType: String) {
-        MEtcdPlugin.gameType = gameType
-    }
 }
