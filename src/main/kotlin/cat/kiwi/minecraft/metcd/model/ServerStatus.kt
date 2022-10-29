@@ -1,6 +1,5 @@
 package cat.kiwi.minecraft.metcd.model
 
-import org.bukkit.entity.Player
 
 data class ServerStatus(
     val uuid: String,

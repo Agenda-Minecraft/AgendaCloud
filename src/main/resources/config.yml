@@ -6,5 +6,5 @@ etcd:
 menu:
   paddingTo: 10
   title: "MEtcd"
-  switchServerCommand: "/atp %server%"
+  switchServerCommand: "atp %server%"
 gameType: "unknown"

@@ -32,7 +32,7 @@ object Config {
             vertxIOExitWait = instance.config.getLong("etcd.vertxIOExitWait")
             paddingTo = instance.config.getInt("menu.paddingTo")
             title = instance.config.getString("menu.title")?: "MEtcd"
-            switchServerCommand = instance.config.getString("menu.switchServerCommand")?: "/atp %server%"
+            switchServerCommand = instance.config.getString("menu.switchServerCommand")?: "atp %server%"
             gameType = instance.config.getString("gameType")?: "unknown"
 
         } catch (e: Exception) {

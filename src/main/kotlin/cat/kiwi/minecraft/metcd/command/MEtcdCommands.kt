@@ -1,13 +1,11 @@
 package cat.kiwi.minecraft.metcd.command
 
+import cat.kiwi.minecraft.metcd.MEtcd
 import cat.kiwi.minecraft.metcd.MEtcdPlugin
-import cat.kiwi.minecraft.metcd.controller.BungeeMenu
 import cat.kiwi.minecraft.metcd.model.GameStatus
-import cat.kiwi.minecraft.metcd.service.QueryService
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
-import org.bukkit.entity.Player
 
 class MEtcdCommands: CommandExecutor {
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>): Boolean {
@@ -21,7 +19,7 @@ class MEtcdCommands: CommandExecutor {
                     return true
                 }
                 if (args.size == 2) {
-                    sender.sendMessage(QueryService.serverStatus(args[1]).joinToString("\n"))
+                    sender.sendMessage(MEtcd.getServerStatusList(args[1]).joinToString("\n"))
                 }
                 return true
 
@@ -60,17 +58,6 @@ class MEtcdCommands: CommandExecutor {
                 }
                 return true
             }
-            "opengui" -> {
-                if (!sender.hasPermission("metcd.command.setstatus")) {
-                    sender.sendMessage("§cYou don't have permission to use this command.")
-                    return false
-                }
-                if (args.size == 2) {
-                    BungeeMenu().initMenu(sender as Player, args[1])
-                }
-                return true
-            }
-
             else -> {
                 sender.sendMessage("/metcd query <serviceType>")
             }
