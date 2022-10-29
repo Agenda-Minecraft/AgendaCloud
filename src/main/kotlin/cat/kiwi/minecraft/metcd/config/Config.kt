@@ -8,9 +8,7 @@ object Config {
     lateinit var etcdEndpoints: ArrayList<URI>
     var ttl = 30L
     var vertxIOExitWait = 2000L
-    var paddingTo = 10
-    lateinit var title: String
-    lateinit var switchServerCommand: String
+
     lateinit var gameType: String
 
     fun readConfig() {
@@ -30,9 +28,7 @@ object Config {
             }
             ttl = instance.config.getLong("etcd.ttl")
             vertxIOExitWait = instance.config.getLong("etcd.vertxIOExitWait")
-            paddingTo = instance.config.getInt("menu.paddingTo")
-            title = instance.config.getString("menu.title")?: "MEtcd"
-            switchServerCommand = instance.config.getString("menu.switchServerCommand")?: "atp %server%"
+
             gameType = instance.config.getString("gameType")?: "unknown"
 
         } catch (e: Exception) {

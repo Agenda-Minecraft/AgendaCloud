@@ -3,7 +3,6 @@ package cat.kiwi.minecraft.metcd
 import cat.kiwi.minecraft.metcd.command.MEtcdCommands
 import cat.kiwi.minecraft.metcd.config.Config
 import cat.kiwi.minecraft.metcd.listener.PlayerEvents
-import cat.kiwi.minecraft.metcd.listener.ClickEvents
 import cat.kiwi.minecraft.metcd.model.GameStatus
 import cat.kiwi.minecraft.metcd.model.ServerStatus
 import cat.kiwi.minecraft.metcd.service.ReportService
@@ -51,8 +50,6 @@ class MEtcdPlugin : JavaPlugin() {
         ReportService.reportStatus()
 
         server.pluginManager.registerEvents(PlayerEvents(), this)
-        server.pluginManager.registerEvents(ClickEvents(), this)
-
 
         logger.info("MEtcd is enabled!")
     }
