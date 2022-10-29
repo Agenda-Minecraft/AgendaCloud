@@ -15,10 +15,15 @@ import java.util.UUID
 
 class MEtcdPlugin : JavaPlugin() {
     companion object {
+        @JvmStatic
         lateinit var etcdClient: Client
+        @JvmStatic
         lateinit var instance: MEtcdPlugin
+        @JvmStatic
         lateinit var uuid: String
+        @JvmStatic
         lateinit var serverStatus: ServerStatus
+        @JvmStatic
         lateinit var grant: LeaseGrantResponse
         var gameStatus: GameStatus = GameStatus.WAITING
             set(value) {

@@ -1,10 +1,13 @@
 package cat.kiwi.minecraft.metcd
 
 import cat.kiwi.minecraft.metcd.model.GameStatus
+
 import cat.kiwi.minecraft.metcd.model.ServerStatus
 import com.google.gson.Gson
 import io.etcd.jetcd.ByteSequence
 import io.etcd.jetcd.options.GetOption
+import org.bukkit.scheduler.BukkitRunnable
+import org.bukkit.scheduler.BukkitWorker
 
 object MEtcd {
     fun modifyGateStatus(gameStatus: GameStatus) {
@@ -12,6 +15,8 @@ object MEtcd {
     }
 
     fun getServerStatusList(serviceType: String): List<ServerStatus> {
+
+
         val kvClient = MEtcdPlugin.etcdClient.kvClient
         val prefix = ByteSequence.from("/agenda/service/$serviceType", Charsets.UTF_8)
         val option = GetOption.newBuilder().isPrefix(true).build()
