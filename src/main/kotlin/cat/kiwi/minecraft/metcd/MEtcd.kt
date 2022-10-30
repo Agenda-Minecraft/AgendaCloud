@@ -10,8 +10,12 @@ import org.bukkit.scheduler.BukkitRunnable
 import org.bukkit.scheduler.BukkitWorker
 
 object MEtcd {
-    fun modifyGateStatus(gameStatus: GameStatus) {
+    fun setGameStatus(gameStatus: GameStatus) {
         MEtcdPlugin.gameStatus = gameStatus
+    }
+
+    fun getGameStatus(): GameStatus {
+        return MEtcdPlugin.gameStatus
     }
 
     fun getServerStatusList(serviceType: String): List<ServerStatus> {

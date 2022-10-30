@@ -8,7 +8,7 @@ plugins {
 }
 
 group = "cat.kiwi.minecraft"
-version = "1.0.2-SNAPSHOT"
+version = "2.0.4-SNAPSHOT"
 
 repositories {
     mavenCentral()
@@ -29,7 +29,6 @@ dependencies {
 
     // minecraft apis
     implementation("org.spigotmc:spigot-api:1.19.2-R0.1-SNAPSHOT")
-    implementation("de.tr7zw:item-nbt-api-plugin:2.10.0")
 
     // other
     implementation("com.google.code.gson:gson:2.10")

@@ -3,8 +3,5 @@ etcd:
     - http://localhost:2379
   ttl: 30 # s
   vertxIOExitWait: 2000 # ms
-menu:
-  paddingTo: 10
-  title: "MEtcd"
-  switchServerCommand: "atp %server%"
+
 gameType: "unknown"
