@@ -8,7 +8,7 @@ A Plugin which provides a simple interface to report metrics to etcd.
 ## How to use it
 ### The only method
 ```kotlin
- MEtcd.modifyGateStatus(GameStatus.WAITING)
+ MEtcd.setGameStatus(GameStatus.WAITING)
 
 // WAITING, LOADING, STARTING, RUNNING, ENDING, EXITED
 ```
