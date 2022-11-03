@@ -7,6 +7,7 @@ plugins {
     `maven-publish`
 }
 
+val artifactId = "MEtcd"
 group = "cat.kiwi.minecraft"
 version = "2.0.5-SNAPSHOT"
 
@@ -58,9 +59,9 @@ artifacts {
 publishing {
     publications {
         create<MavenPublication>("maven") {
-            groupId = "cat.kiwi"
-            artifactId = "MEtcd"
-            version = "1.0.2-SNAPSHOT"
+            groupId = groupId
+            artifactId = artifactId
+            version = version
 
             from(components["java"])
         }
