@@ -4,6 +4,7 @@ package cat.kiwi.minecraft.metcd.model
 data class ServerStatus(
     val uuid: String,
     val gameType: String,
+    val displayName: String,
     val currentOnline: Int,
     val players: Collection<String>,
     val total: Int,

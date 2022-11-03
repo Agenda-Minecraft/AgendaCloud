@@ -30,6 +30,7 @@ class ReportService {
                     MEtcdPlugin.serverStatus = ServerStatus(
                         MEtcdPlugin.uuid,
                         Config.gameType,
+                        Config.displayName,
                         currentOnline,
                         players,
                         total,

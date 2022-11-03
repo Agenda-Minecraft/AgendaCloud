@@ -8,7 +8,7 @@ plugins {
 }
 
 group = "cat.kiwi.minecraft"
-version = "2.0.4-SNAPSHOT"
+version = "2.0.5-SNAPSHOT"
 
 repositories {
     mavenCentral()

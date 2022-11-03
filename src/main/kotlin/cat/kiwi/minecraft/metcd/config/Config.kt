@@ -10,6 +10,7 @@ object Config {
     var vertxIOExitWait = 2000L
 
     lateinit var gameType: String
+    lateinit var displayName: String
 
     fun readConfig() {
         val instance = MEtcdPlugin.instance
@@ -30,6 +31,7 @@ object Config {
             vertxIOExitWait = instance.config.getLong("etcd.vertxIOExitWait")
 
             gameType = instance.config.getString("gameType")?: "unknown"
+            displayName = instance.config.getString("displayName")?: "unknown"
 
         } catch (e: Exception) {
             e.printStackTrace()

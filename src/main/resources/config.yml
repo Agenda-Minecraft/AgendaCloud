@@ -5,3 +5,4 @@ etcd:
   vertxIOExitWait: 2000 # ms
 
 gameType: "unknown"
+displayName: "unknownName"
