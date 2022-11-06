@@ -1,5 +1,7 @@
 package cat.kiwi.minecraft.metcd.model
 
+import java.net.InetSocketAddress
+
 
 data class ServerStatus(
     val uuid: String,
@@ -15,3 +17,9 @@ data class ServerStatus(
     val version: String,
     val meta: String
 )
+
+val ServerStatus.serverName: String
+    get() = address.replace(".", "-") + "-$port"
+
+val ServerStatus.inetAddress: InetSocketAddress
+    get() = InetSocketAddress(address, port)
