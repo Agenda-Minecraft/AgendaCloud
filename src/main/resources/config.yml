@@ -6,3 +6,4 @@ etcd:
 
 gameType: "unknown"
 displayName: "unknownName"
+useDisplayName: false

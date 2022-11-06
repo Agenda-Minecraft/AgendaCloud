@@ -31,6 +31,7 @@ class ReportService {
                         MEtcdPlugin.uuid,
                         Config.gameType,
                         Config.displayName,
+                        false,
                         currentOnline,
                         players,
                         total,

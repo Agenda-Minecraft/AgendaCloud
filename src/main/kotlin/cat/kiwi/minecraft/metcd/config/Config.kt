@@ -8,6 +8,7 @@ object Config {
     lateinit var etcdEndpoints: ArrayList<URI>
     var ttl = 30L
     var vertxIOExitWait = 2000L
+    var useDisplayName = false
 
     lateinit var gameType: String
     lateinit var displayName: String
@@ -32,6 +33,7 @@ object Config {
 
             gameType = instance.config.getString("gameType")?: "unknown"
             displayName = instance.config.getString("displayName")?: "unknown"
+            useDisplayName = instance.config.getBoolean("useDisplayName")
 
         } catch (e: Exception) {
             e.printStackTrace()

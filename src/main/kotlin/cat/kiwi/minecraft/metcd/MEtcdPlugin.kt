@@ -51,8 +51,6 @@ class MEtcdPlugin : JavaPlugin() {
         grant = etcdClient.leaseClient.grant(Config.ttl).get()
         etcdClient.leaseClient.keepAlive(grant.id, Observers.observer { Logger.debug("Service Keepalive") })
 
-        ReportService.reportStatus()
-
         server.pluginManager.registerEvents(PlayerEvents(), this)
 
         logger.info("MEtcd is enabled!")

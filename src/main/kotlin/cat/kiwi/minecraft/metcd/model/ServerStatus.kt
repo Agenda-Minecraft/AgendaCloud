@@ -5,6 +5,7 @@ data class ServerStatus(
     val uuid: String,
     val gameType: String,
     val displayName: String,
+    val useDisplayName: Boolean,
     val currentOnline: Int,
     val players: Collection<String>,
     val total: Int,

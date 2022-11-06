@@ -9,7 +9,7 @@ plugins {
 
 val artifactId = "MEtcd"
 group = "cat.kiwi.minecraft"
-version = "2.0.5-SNAPSHOT"
+version = "2.0.6-SNAPSHOT"
 
 repositories {
     mavenCentral()
