@@ -1,4 +1,4 @@
-# MEtcd
+# Agenda Cloud
 
 A Plugin which provides a simple interface to report metrics to etcd.
 
@@ -8,7 +8,7 @@ A Plugin which provides a simple interface to report metrics to etcd.
 ## How to use it
 ### The only method
 ```kotlin
- MEtcd.setGameStatus(GameStatus.WAITING)
+ AgendaCloud.setGameStatus(GameStatus.WAITING)
 
 // WAITING, LOADING, STARTING, RUNNING, ENDING, EXITED
 ```
@@ -18,7 +18,7 @@ A Plugin which provides a simple interface to report metrics to etcd.
 
 
 
-[![](https://jitpack.io/v/Agenda-Minecraft/MEtcd.svg)](https://jitpack.io/#Agenda-Minecraft/MEtcd)
+[![](https://jitpack.io/v/Agenda-Minecraft/AgendaCloud.svg)](https://jitpack.io/#Agenda-Minecraft/AgendaCloud)
 
 ### Gradle kts
 ```kotlin
@@ -29,7 +29,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.github.Agenda-Minecraft:MEtcd:$version")
+    implementation("com.github.Agenda-Minecraft:AgendaCloud:$version")
 }
 ```
 
@@ -41,7 +41,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.github.Agenda-Minecraft:MEtcd:$version'
+    implementation 'com.github.Agenda-Minecraft:AgendaCloud:$version'
 }
 ```
 
@@ -59,7 +59,7 @@ dependencies {
 </repositories>
 <dependency>
     <groupId>com.github.Agenda-Minecraft</groupId>
-    <artifactId>MEtcd</artifactId>
+    <artifactId>AgendaCloud</artifactId>
     <version>$version</version>
 </dependency>
 

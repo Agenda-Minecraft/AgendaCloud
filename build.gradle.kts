@@ -7,9 +7,9 @@ plugins {
     `maven-publish`
 }
 
-val artifactId = "MEtcd"
+val artifactId = "AgendaCloud"
 group = "cat.kiwi.minecraft"
-version = "2.0.7-SNAPSHOT"
+version = "2.0.8-SNAPSHOT"
 
 repositories {
     mavenCentral()
@@ -25,8 +25,8 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 
-    // sql drivers
-    implementation("io.etcd:jetcd-core:0.7.3")
+    // service report libs
+    implementation("com.orbitz.consul:consul-client:1.5.3")
 
     // minecraft apis
     implementation("org.spigotmc:spigot-api:1.19.2-R0.1-SNAPSHOT")
@@ -46,8 +46,7 @@ tasks.withType<KotlinCompile> {
 
 tasks {
     named<ShadowJar>("shadowJar") {
-        mergeServiceFiles()
-        archiveBaseName.set("MEtcd")
+        archiveBaseName.set("AgendaCloud")
         dependencies {
             exclude(dependency("org.spigotmc:spigot-api:1.19.2-R0.1-SNAPSHOT"))
         }

@@ -1,6 +1,6 @@
-package cat.kiwi.minecraft.metcd.listener
+package cat.kiwi.minecraft.acloud.listener
 
-import cat.kiwi.minecraft.metcd.service.ReportService
+import cat.kiwi.minecraft.acloud.service.ReportService
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
 import org.bukkit.event.player.PlayerJoinEvent

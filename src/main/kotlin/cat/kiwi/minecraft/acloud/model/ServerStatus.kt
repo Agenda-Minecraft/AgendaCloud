@@ -1,4 +1,4 @@
-package cat.kiwi.minecraft.metcd.model
+package cat.kiwi.minecraft.acloud.model
 
 import java.net.InetSocketAddress
 

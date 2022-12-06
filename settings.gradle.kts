@@ -1,3 +1,3 @@
 
-rootProject.name = "MEtcd"
+rootProject.name = "AgendaCloud"
 

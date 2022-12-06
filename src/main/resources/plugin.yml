@@ -1,12 +1,12 @@
-name: MEtcd
-version: 2.0.7-SNAPSHOT
-main: cat.kiwi.minecraft.metcd.MEtcdPlugin
+name: AgendaCloud
+version: 3.0.0-SNAPSHOT
+main: cat.kiwi.minecraft.acloud.AgendaCloudPlugin
 load: STARTUP
 authors: [ moeKiwiSAMA ]
-description: Etcd register
-api-version: 1.19
+description: Service register
+api-version: 1.12
 commands:
-    metcd:
-        description: Etcd register
-        usage: /etcd query>
-        aliases: [ etcd, metcd ]
+    acloud:
+        description: Service register
+        usage: /acloud query>
+        aliases: [ acloud ]

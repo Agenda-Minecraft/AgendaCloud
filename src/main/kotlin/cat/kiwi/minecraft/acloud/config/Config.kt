@@ -1,38 +1,30 @@
-package cat.kiwi.minecraft.metcd.config
+package cat.kiwi.minecraft.acloud.config
 
-import cat.kiwi.minecraft.metcd.MEtcdPlugin
+import cat.kiwi.minecraft.acloud.AgendaCloudPlugin
 import java.net.URI
 
 object Config {
     var debug = false
-    lateinit var etcdEndpoints: ArrayList<URI>
-    var ttl = 30L
-    var vertxIOExitWait = 2000L
+    var ttl = 10L
     var useDisplayName = false
 
+    lateinit var consulUrl: String
     lateinit var gameType: String
     lateinit var displayName: String
 
     fun readConfig() {
-        val instance = MEtcdPlugin.instance
+        val instance = AgendaCloudPlugin.instance
         val logger = instance.logger
 
         instance.saveDefaultConfig()
         val unFindConfig = mutableListOf<String>()
         try {
             debug = instance.config.getBoolean("debug")
-            etcdEndpoints = instance.config.getStringList("etcd.endpoints").let { it ->
-                val list = arrayListOf<URI>()
-                it.forEach {
-                    list.add(URI.create(it))
-                    }
-                list
-            }
-            ttl = instance.config.getLong("etcd.ttl")
-            vertxIOExitWait = instance.config.getLong("etcd.vertxIOExitWait")
+            consulUrl = instance.config.getString("consul.url").toString()
+            ttl = instance.config.getLong("consul.ttl")
 
-            gameType = instance.config.getString("gameType")?: "unknown"
-            displayName = instance.config.getString("displayName")?: "unknown"
+            gameType = instance.config.getString("gameType") ?: "unknown"
+            displayName = instance.config.getString("displayName") ?: "unknown"
             useDisplayName = instance.config.getBoolean("useDisplayName")
 
         } catch (e: Exception) {
