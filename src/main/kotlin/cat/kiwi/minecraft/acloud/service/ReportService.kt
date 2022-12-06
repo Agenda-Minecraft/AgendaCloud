@@ -64,10 +64,11 @@ class ReportService {
 
                 val service: Registration = ImmutableRegistration.builder()
                     .id(AgendaCloudPlugin.serviceUUID)
-                    .name(Config.gameType)
+                    .name("agenda/server")
                     .port(port)
                     .check(Registration.RegCheck.ttl(Config.ttl))
                     .meta(Collections.singletonMap("serviceInfo", payload))
+                    .tags(Collections.singletonList(Config.gameType))
                     .build()
                 agentClient.register(service)
                 agentClient.pass(AgendaCloudPlugin.serviceUUID)

@@ -9,7 +9,7 @@ plugins {
 
 val artifactId = "AgendaCloud"
 group = "cat.kiwi.minecraft"
-version = "2.0.8-SNAPSHOT"
+version = "3.0.1-SNAPSHOT"
 
 repositories {
     mavenCentral()
