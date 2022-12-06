@@ -21,7 +21,7 @@ object AgendaCloud {
 
     fun getServerStatusList(serviceType: String): List<ServerStatus> {
         val healthClient = AgendaCloudPlugin.consulClient.healthClient()
-        val nodes = healthClient.getHealthyServiceInstances(serviceType).response
+        val nodes = healthClient.getHealthyServiceInstances("agenda/server").response.filter { it.service.tags.contains(serviceType) }
         return nodes.map { Gson().fromJson(it.service.meta["serviceInfo"], ServerStatus::class.java) }
     }
 }
